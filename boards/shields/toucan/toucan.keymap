@@ -72,30 +72,27 @@
     };
 
     /*
-     * Toucan has one extra key at the outer edge of each half.
-     * Cradio positions were shifted into the middle 10 columns:
-     *
-     * Left extra: 0, 12, 24, 36
-     * Right extra: 11, 23, 35, 41
+     * 36-key layout: 3x5 per half plus 3 thumbs per half.
+     * Main key positions match the source cradio layout.
      */
     combos {
         compatible = "zmk,combos";
 
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <0 1>;
             bindings = <&kp TAB>;
         };
 
         combo_shift_tab {
             timeout-ms = <60>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
             bindings = <&kp LS(TAB)>;
         };
 
         combo_enter {
             timeout-ms = <40>;
-            key-positions = <19 21>;
+            key-positions = <16 18>;
             bindings = <&kp ENTER>;
         };
 
@@ -103,124 +100,124 @@
             timeout-ms = <30>;
             layers = <0>;
             bindings = <&kp LCTRL>;
-            key-positions = <13 14>;
+            key-positions = <10 11>;
         };
 
         SD_LGUI {
             timeout-ms = <30>;
             layers = <0>;
             bindings = <&kp LGUI>;
-            key-positions = <14 15>;
+            key-positions = <11 12>;
         };
 
         DF_LSHFT {
             timeout-ms = <30>;
             layers = <0>;
             bindings = <&kp LSHFT>;
-            key-positions = <15 16>;
+            key-positions = <12 13>;
         };
 
         FG_LALT {
             timeout-ms = <30>;
             layers = <0>;
             bindings = <&kp LALT>;
-            key-positions = <16 17>;
+            key-positions = <13 14>;
         };
 
         JK_RCTRL {
             timeout-ms = <30>;
             layers = <0>;
             bindings = <&kp LCTRL>;
-            key-positions = <19 20>;
+            key-positions = <16 17>;
         };
 
         KL_RGUI {
             timeout-ms = <30>;
             layers = <0>;
             bindings = <&kp LGUI>;
-            key-positions = <20 21>;
+            key-positions = <17 18>;
         };
 
         LL_RSHFT {
             timeout-ms = <30>;
             layers = <0>;
             bindings = <&kp LSHFT>;
-            key-positions = <21 22>;
+            key-positions = <18 19>;
         };
 
         combo_enter_nm {
             timeout-ms = <40>;
             layers = <0>;
-            key-positions = <30 31>;
+            key-positions = <25 26>;
             bindings = <&kp ENTER>;
         };
 
         combo_vim_save {
             timeout-ms = <40>;
             layers = <0>;
-            key-positions = <29 30>;
+            key-positions = <24 25>;
             bindings = <&mc_vim_save>;
         };
 
         combo_vim_qa {
             timeout-ms = <40>;
             layers = <0>;
-            key-positions = <28 31>;
+            key-positions = <23 26>;
             bindings = <&mc_vim_qa>;
         };
 
         combo_screenshot {
             timeout-ms = <60>;
             layers = <0>;
-            key-positions = <2 3 4>;
+            key-positions = <1 2 3>;
             bindings = <&kp LG(LC(LS(N4)))>;
         };
 
         combo_esc_wr {
             timeout-ms = <50>;
             layers = <0>;
-            key-positions = <2 4>;
+            key-positions = <1 3>;
             bindings = <&kp ESC>;
         };
 
         combo_esc_rt {
             timeout-ms = <50>;
             layers = <0>;
-            key-positions = <4 5>;
+            key-positions = <3 4>;
             bindings = <&kp ESC>;
         };
 
         combo_esc_yu {
             timeout-ms = <50>;
             layers = <0>;
-            key-positions = <6 7>;
+            key-positions = <5 6>;
             bindings = <&kp ESC>;
         };
 
         combo_enter_vb {
             timeout-ms = <40>;
             layers = <0>;
-            key-positions = <28 29>;
+            key-positions = <23 24>;
             bindings = <&kp ENTER>;
         };
 
         combo_caps_lock {
             timeout-ms = <60>;
             layers = <0>;
-            key-positions = <25 26 27>;
+            key-positions = <20 21 22>;
             bindings = <&kp CAPSLOCK>;
         };
 
         combo_hold_cmd_shift {
             timeout-ms = <60>;
             layers = <0>;
-            key-positions = <19 20 21>;
+            key-positions = <16 17 18>;
             bindings = <&kp LS(LGUI)>;
         };
 
         chrome_developer_tool {
             bindings = <&kp LG(LA(I))>;
-            key-positions = <32 33 34>;
+            key-positions = <27 28 29>;
         };
     };
 
@@ -229,46 +226,46 @@
 
         default_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E  &kp R           &kp T                   &kp Y      &kp U      &kp I      &kp O    &kp P           &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F           &kp G                   &kp H      &kp J      &kp K      &kp L    &kp SEMI        &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V           &kp B                   &kp N      &kp M      &kp COMMA  &kp DOT  &mt LSHFT FSLH  &kp ESC
-                              &kp LGUI  &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &kp SPACE  &lt 2 F18  &kp RALT
+&kp Q  &kp W  &kp E  &kp R           &kp T                   &kp Y      &kp U      &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F           &kp G                   &kp H      &kp J      &kp K      &kp L    &kp SEMI
+&kp Z  &kp X  &kp C  &kp V           &kp B                   &kp N      &kp M      &kp COMMA  &kp DOT  &mt LSHFT FSLH
+              &kp LGUI  &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &kp SPACE  &lt 2 F18  &kp RALT
             >;
         };
 
         fn_layer {
             bindings = <
-&kp TAB    &kp LG(Q)  &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)    &kp F6      &kp F7        &kp UP_ARROW  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))  &kp BSPC
-&kp LCTRL  &kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)    &trans      &kp LEFT      &kp DOWN      &kp RIGHT         &trans            &kp SQT
-&kp LSHFT  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(B)    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3      &kp ESC
-                                      &kp LGUI  &trans  &trans       &kp LA(LBKT)  &kp LA(RBKT)  &kp RALT
+&kp LG(Q)  &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)    &kp F6      &kp F7        &kp UP_ARROW  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))
+&kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)    &trans      &kp LEFT      &kp DOWN      &kp RIGHT         &trans
+&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LG(B)    &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3
+                      &kp LGUI   &trans     &trans       &kp LA(LBKT)  &kp LA(RBKT)  &kp RALT
             >;
         };
 
         num_layer {
             bindings = <
-&kp TAB    &kp EXCL   &kp AT         &kp HASH      &kp DLLR              &kp PRCNT                &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS             &kp EQUAL         &kp BSPC
-&kp LCTRL  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LEFT_BRACKET      &kp RIGHT_BRACKET &kp SQT
-&kp LSHFT  &kp GRAVE  &trans         &trans        &trans                &trans                   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp NON_US_BACKSLASH  &kp SINGLE_QUOTE  &kp ESC
-                                                   &kp LGUI              &trans                   &kp LEFT_SHIFT   &kp KP_NUMBER_0  &trans              &kp RALT
+&kp EXCL   &kp AT         &kp HASH      &kp DLLR              &kp PRCNT                &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS             &kp EQUAL
+&kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
+&kp GRAVE  &trans         &trans        &trans                &trans                   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp NON_US_BACKSLASH  &kp SINGLE_QUOTE
+                         &kp LGUI      &trans                &kp LEFT_SHIFT           &kp KP_NUMBER_0  &trans              &kp RALT
             >;
         };
 
         mouse_layer {
             bindings = <
-&kp TAB    &kp ESC      &kp LC(MINUS)  &kp LC(ESCAPE)  &kp LC(EQUAL)  &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &mkp MB4  &kp BSPC
-&mo 4      &mo 4        &mkp LCLK      &mkp MCLK       &mkp RCLK      &trans    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB5  &kp SQT
-&kp LSHFT  &kp LG(N1)   &kp LG(N2)     &kp LG(N3)      &kp LG(N4)     &kp LG(N5)    &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans    &kp ESC
-                                      &kp LGUI       &kp LGUI       &trans    &mkp LCLK       &mkp RCLK  &kp RALT
+&kp ESC     &kp LC(MINUS)  &kp LC(ESCAPE)  &kp LC(EQUAL)  &trans       &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &mkp MB4
+&mo 4       &mkp LCLK      &mkp MCLK       &mkp RCLK      &trans       &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB5
+&kp LG(N1)  &kp LG(N2)     &kp LG(N3)      &kp LG(N4)     &kp LG(N5)   &trans          &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans
+                          &kp LGUI        &kp LGUI       &trans       &mkp LCLK       &mkp RCLK       &kp RALT
             >;
         };
 
         fast_mouse_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv FAST_UP    &msc SCRL_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &mmv FAST_LEFT  &mmv FAST_DOWN  &mmv FAST_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans          &trans           &trans  &trans
-                        &trans  &trans  &trans    &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv FAST_UP    &msc SCRL_RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &mmv FAST_LEFT  &mmv FAST_DOWN  &mmv FAST_RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans          &trans           &trans
+                &trans  &trans  &trans    &trans          &trans          &trans
             >;
         };
     };
