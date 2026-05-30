@@ -225,15 +225,17 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            display-name = "BJ";
             bindings = <
 &kp Q  &kp W  &kp E  &kp R           &kp T                   &kp Y      &kp U      &kp I      &kp O    &kp P
 &kp A  &kp S  &kp D  &kp F           &kp G                   &kp H      &kp J      &kp K      &kp L    &kp SEMI
 &kp Z  &kp X  &kp C  &kp V           &kp B                   &kp N      &kp M      &kp COMMA  &kp DOT  &mt LSHFT FSLH
-              &kp LGUI  &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &kp SPACE  &lt 2 F18  &kp RALT
+              &kp LGUI  &lt_sk 1 LSHFT  &lt_bspc 3 BACKSPACE    &lt 5 SPACE  &lt 2 F18  &kp RALT
             >;
         };
 
         fn_layer {
+            display-name = "FN";
             bindings = <
 &kp LG(Q)  &kp LG(W)  &kp LG(E)  &kp LG(R)  &kp LG(T)    &kp F6      &kp F7        &kp UP_ARROW  &kp LS(LG(LBKT))  &kp LS(LG(RBKT))
 &kp LG(A)  &kp LG(S)  &kp LG(D)  &kp LG(F)  &kp LG(G)    &trans      &kp LEFT      &kp DOWN      &kp RIGHT         &trans
@@ -243,6 +245,7 @@
         };
 
         num_layer {
+            display-name = "NUM";
             bindings = <
 &kp EXCL   &kp AT         &kp HASH      &kp DLLR              &kp PRCNT                &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS             &kp EQUAL
 &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp LEFT_BRACKET      &kp RIGHT_BRACKET
@@ -252,6 +255,7 @@
         };
 
         mouse_layer {
+            display-name = "MOUSE";
             bindings = <
 &kp ESC     &kp LC(MINUS)  &kp LC(ESCAPE)  &kp LC(EQUAL)  &trans       &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &mkp MB4
 &mo 4       &mkp LCLK      &mkp MCLK       &mkp RCLK      &trans       &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB5
@@ -261,11 +265,22 @@
         };
 
         fast_mouse_layer {
+            display-name = "FAST";
             bindings = <
 &trans  &trans  &trans  &trans  &trans    &msc SCRL_UP    &msc SCRL_LEFT  &mmv FAST_UP    &msc SCRL_RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans    &msc SCRL_DOWN  &mmv FAST_LEFT  &mmv FAST_DOWN  &mmv FAST_RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans          &trans           &trans
                 &trans  &trans  &trans    &trans          &trans          &trans
+            >;
+        };
+
+        scroll_layer {
+            display-name = "SCROLL";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
